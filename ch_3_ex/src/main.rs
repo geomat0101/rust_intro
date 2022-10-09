@@ -15,7 +15,7 @@ fn f_to_c(temp: i32) -> i32 {
 
 fn run_ex_1() {
     loop {
-        let mut tempf = String::new();
+        let mut tempf: String = String::new();
         println!("Enter temp in Farenheit ('q' to exit):");
         io::stdin()
             .read_line(&mut tempf)
@@ -50,7 +50,7 @@ fn run_ex_3() {
 
 fn main() {
     loop {
-        let mut choice = String::new();
+        let mut choice: String = String::new();
         
         println!("
 Choose Exercise to Run ('q' to exit):
