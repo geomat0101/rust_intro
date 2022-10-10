@@ -25,7 +25,7 @@ fn run_ex_1() {
             break;
         }
 
-        let tempf: i32 = match tempf.trim().parse() {
+        let tempf: i32 = match tempf.parse() {
             Ok(num) => num,
             Err(_) => continue,
         };
@@ -53,7 +53,7 @@ fn run_ex_2() {
             break;
         }
 
-        let seq: u32 = match seq.trim().parse() {
+        let seq: u32 = match seq.parse() {
             Ok(num) => num,
             Err(_) => continue,
         };
@@ -126,14 +126,13 @@ Enter Choice:");
             .expect("Failed to read line");
         
         choice = choice.trim().to_string();
-        if choice == "q" {
-            break;
-        } else if choice == "1" {
-            run_ex_1();
-        } else if choice == "2" {
-            run_ex_2();
-        } else if choice == "3" {
-            run_ex_3();
+        let ptr = &choice[..];
+        match ptr {
+            "q" => break,
+            "1" => run_ex_1(),
+            "2" => run_ex_2(),
+            "3" => run_ex_3(),
+            _ => ()
         }
     }
 }
