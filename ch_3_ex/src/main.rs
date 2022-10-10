@@ -21,7 +21,8 @@ fn run_ex_1() {
             .expect("Failed to read line");
         
         tempf = tempf.trim().to_string();
-        if tempf == "q" {
+
+        if let "q" = tempf.as_str() {
             break;
         }
 
@@ -49,7 +50,8 @@ fn run_ex_2() {
             .expect("Failed to read line");
         
         seq = seq.trim().to_string();
-        if seq == "q" {
+
+        if let "q" = seq.as_str() {
             break;
         }
 
@@ -125,9 +127,7 @@ Enter Choice:");
             .read_line(&mut choice)
             .expect("Failed to read line");
         
-        choice = choice.trim().to_string();
-        let ptr = &choice[..];
-        match ptr {
+        match choice.trim() {
             "q" => break,
             "1" => run_ex_1(),
             "2" => run_ex_2(),
