@@ -77,8 +77,35 @@ fn run_ex_2() {
 fn run_ex_3() {
     // Ex3: Print the lyrics to the Christmas carol “The Twelve Days of Christmas,” 
     //      taking advantage of the repetition in the song.
+ 
+    let data = [
+            ("first", "A partridge in a pear tree\n"), 
+            ("second", "Two turtle doves, and\n"),
+            ("third", "Three french hens\n"),
+            ("fourth", "Four calling birds\n"),
+            ("fifth", "FIVE GOLDEN RINGS!!!\n"),
+            ("sixth", "Six geese a-laying\n"),
+            ("seventh", "Seven swans a-swimming\n"),
+            ("eighth", "Eight maids a-milking\n"),
+            ("ninth", "Nine ladies dancing\n"),
+            ("tenth", "Ten lords a-leaping\n"),
+            ("eleventh", "Eleven pipers piping\n"),
+            ("twelfth", "Twelve drummers drumming\n"),
+        ];
+  
+    let mut verse = 1;
+    let mut stanza = String::new();
 
-    println!("Unimplemented")
+    for day in data {
+        let (ordinal, loot) = day;
+        println!("\n[Verse {verse}]");
+        println!("On the {ordinal} day of Christmas, my true love gave to me ...");
+
+        stanza.insert_str(0, loot);
+
+        println!("{stanza}");
+        verse += 1;
+    }
 }
 
 
